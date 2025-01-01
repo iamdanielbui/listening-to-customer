@@ -120,7 +120,7 @@ const Results = () => {
           }}
           maxValue={10}
         />
-        <Box width={"100%"} marginTop={"-12%"} marginBottom={"2%"} textAlign={"center"}>
+        <Box width={"100%"} marginTop={"-12%"} marginBottom={"5%"} textAlign={"center"}>
           <Typography fontWeight={500}>Score</Typography>
         </Box>
       </Box>

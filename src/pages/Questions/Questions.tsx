@@ -6,7 +6,6 @@ import QuestionsData from "../../data/assessment.json"; // Đường dẫn tới
 import IconArrowRight from "../../assets/IconArrowRight";
 import { useNavigate } from "react-router-dom";
 
-// Định nghĩa interface TypeScript cho dữ liệu
 interface Option {
   id: number;
   text: string;
@@ -36,9 +35,7 @@ const Questions: React.FC = () => {
   const goToResultPage = () => {
     navigate("/result", { state: { score: totalScore } });
   };
-  // Hàm lưu đáp án
   const handleAnswer = (questionId: number, option: Option) => {
-    // Cập nhật đáp án
     setAnswers((prev) => ({
       ...prev,
       [questionId]: option.id,

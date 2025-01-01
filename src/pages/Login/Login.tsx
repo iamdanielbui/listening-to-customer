@@ -1,12 +1,27 @@
+import { useState } from "react";
 import { Button, Stack, TextField, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import IconLocket from "../../assets/IconLocket";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState(false);
+
   const goToGuiPage = () => {
-    navigate("/gui");
+    if (isValidEmail) {
+      navigate("/gui");
+    }
   };
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const emailValue = event.target.value;
+    setEmail(emailValue);
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setIsValidEmail(emailRegex.test(emailValue));
+  };
+
   return (
     <Stack gap={4} alignItems={"center"} maxWidth={1024} minWidth={355} width={"100%"}>
       <Typography color="#dadee3" fontSize={30} sx={{ textTransform: "uppercase" }} textAlign={"center"}>
@@ -19,12 +34,15 @@ const Login = () => {
         fullWidth
         variant="outlined"
         placeholder="Địa chỉ email của bạn"
+        value={email}
+        onChange={handleEmailChange}
         sx={{
           backgroundColor: "white",
           borderRadius: "8px",
         }}
+        error={!!email && !isValidEmail}
+        helperText={!!email && !isValidEmail ? "Định dạng email không hợp lệ" : ""}
       />
-
       <Button
         onClick={goToGuiPage}
         variant="contained"
@@ -37,6 +55,7 @@ const Login = () => {
           fontSize: 18,
           textTransform: "unset",
         }}
+        disabled={!isValidEmail}
       >
         Bắt đầu
       </Button>
