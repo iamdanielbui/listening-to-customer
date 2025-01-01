@@ -33,7 +33,7 @@ import { Helmet } from "react-helmet-async";
 
 const ShareWithEmail = () => {
   const handleShare = () => {
-    const url = "http://localhost:5173/share";
+    const url = "https://listening-to-customer-f06430jzx-daniel-buis-projects-c27c0629.vercel.app/share-with-email";
     const fbShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
     window.open(fbShareUrl, "_blank", "width=600,height=400");
   };
@@ -43,8 +43,8 @@ const ShareWithEmail = () => {
       <Helmet>
         <meta property="og:title" content="Trang chia sẻ lên Facebook" />
         <meta property="og:description" content="Một trang nội dung hay để chia sẻ." />
-        <meta property="og:image" content="https://example.com/thumbnail.jpg" />
-        <meta property="og:url" content="https://example.com/share-this-page" />
+        <meta property="og:image" content="../../assets/thumbnails/tn-lever5.jpg" />
+        <meta property="og:url" content="https://listening-to-customer-f06430jzx-daniel-buis-projects-c27c0629.vercel.app/share-with-email" />
         <meta property="og:type" content="website" />
       </Helmet>
 
