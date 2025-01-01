@@ -11,17 +11,17 @@ const Share = () => {
     navigate("/share-with-email");
   };
   const handleShare = () => {
-    const url = "https://listening-to-customer.vercel.app/share-with-email";
+    const url = "https://listening-to-customer.vercel.app/result";
     const fbShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
     window.open(fbShareUrl, "_blank", "width=600,height=400");
   };
   return (
     <Stack bgcolor={"#051e40"} alignItems={"center"} height={"100vh"} padding={2} justifyContent={"center"}>
       <Helmet>
-        <meta property="og:title" content="Trang chia sẻ lên Facebook" />
-        <meta property="og:description" content="Một trang nội dung hay để chia sẻ." />
+        <meta property="og:title" content="Kết quả lắng nghe khách hàng của doanh nghiệp" />
+        <meta property="og:description" content="Lắng nghe" />
         <meta property="og:image" content="../../assets/thumbnails/tn-lever5.jpg" />
-        <meta property="og:url" content="https://listening-to-customer.vercel.app/share-with-email" />
+        <meta property="og:url" content="https://listening-to-customer.vercel.app/result" />
         <meta property="og:type" content="website" />
       </Helmet>
       <Stack boxShadow={1} bgcolor={"white"} borderRadius={2} minWidth={355} maxWidth={700} justifyContent={"center"} alignItems={"center"} padding={3} gap={2}>

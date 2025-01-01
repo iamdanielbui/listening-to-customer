@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import IconShare from "../../assets/IconShare";
 import ContainerBox from "../../components/ContainerBox";
 import ResultsData from "../../data/assessment.json";
+import { Helmet } from "react-helmet-async";
 
 type Result = {
   level: number;
@@ -60,6 +61,13 @@ const Results = () => {
 
   return (
     <ContainerBox>
+      <Helmet>
+        <meta property="og:title" content="Kết quả lắng nghe khách hàng của doanh nghiệp" />
+        <meta property="og:description" content="Lắng nghe" />
+        <meta property="og:image" content="../../assets/thumbnails/tn-lever5.jpg" />
+        <meta property="og:url" content="https://listening-to-customer.vercel.app/result" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <Box display={"flex"} width={"100%"} gap={1}>
         <Stack display={"flex"} justifyContent={"center"} alignItems={"center"}>
           <Avatar
@@ -112,7 +120,7 @@ const Results = () => {
           }}
           maxValue={10}
         />
-        <Box width={"100%"} marginTop={"-12%"} marginBottom={"8%"} textAlign={"center"}>
+        <Box width={"100%"} marginTop={"-12%"} marginBottom={"2%"} textAlign={"center"}>
           <Typography fontWeight={500}>Score</Typography>
         </Box>
       </Box>
